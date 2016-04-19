@@ -1,1 +1,11 @@
-<h1> hello world welcome to python</h1>
+{% extends "base.html"%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content%}
+<center>
+<h1> hello everyone, welcome to join the  python world!!!</h1>
+<h1>Hello, {% if name %} {{ name }} {%else %} Stranger {% endif %}!</h1>
+<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+</center>
+{{ wtf.quick_form(form)}}
+{% endblock%}
